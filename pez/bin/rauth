@@ -1,0 +1,5 @@
+#!/bin/bash
+## set this in ~/.bashrc for secrecy
+# export KUBECTL_VSPHERE_PASSWORD="secret pw"
+kubectl vsphere login --server wcp.haas-417.pez.vmware.com -u devops@vsphere.local --tanzu-kubernetes-cluster-namespace fci --tanzu-kubernetes-cluster-name run
+kubectl config use-context run

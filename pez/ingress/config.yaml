@@ -1,0 +1,6 @@
+#@data/values
+---
+infrastructure_provider: vsphere
+envoy:
+  service:
+    type: LoadBalancer
