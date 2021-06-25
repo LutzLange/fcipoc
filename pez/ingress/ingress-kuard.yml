@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+    ingress.kubernetes.io/force-ssl-redirect: "true"
+    kubernetes.io/ingress.class: contour
+    kubernetes.io/tls-acme: "true"  
+  labels:
+    app: kuard
+  name: kuard
+spec:
+  tls: 
+  - secretName: ingress-kuard-secret
+    hosts:
+    - ingress-kuard.sademo.de
+  rules:
+  - host: ingress-kuard.sademo.de
+    http:
+      paths:
+      - path: /
+        pathType: Prefix 
+        backend:
+          service:
+            name: kuard
+            port:
+              number: 80
