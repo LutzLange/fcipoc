@@ -1,6 +1,6 @@
 global:
   imagePullSecrets: 
-  - 970c59cc-09c2-40a0-abc8-c45c4bc377ad
+  - YOURKEYHERE 
 persistence:
   storageClass: pacific-gold-storage-policy
 service:
