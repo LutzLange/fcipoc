@@ -1,0 +1,22 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+allowVolumeExpansion: true
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+  creationTimestamp: "2021-07-07T14:44:20Z"
+  labels:
+    isSyncedFromSupervisor: "yes"
+  name: pacific-gold-storage-policy
+  resourceVersion: "2171582"
+  uid: 99c46626-ea6f-486e-884e-74e868f82270
+parameters:
+  svStorageClass: pacific-gold-storage-policy
+  csi.storage.k8s.io/fstype: "ext4"
+provisioner: csi.vsphere.vmware.com
+reclaimPolicy: Delete
+volumeBindingMode: Immediate

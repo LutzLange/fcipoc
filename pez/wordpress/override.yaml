@@ -1,0 +1,22 @@
+global:
+  imagePullSecrets: 
+  - 970c59cc-09c2-40a0-abc8-c45c4bc377ad
+persistence:
+  storageClass: pacific-gold-storage-policy
+service:
+  type: ClusterIP 
+ingress:
+  enabled: true
+  hostname: wordpress.sademo.de
+  certManager: true
+  tls: true
+  annotations:
+    kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: contour
+    ingress.kubernetes.io/force-ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+wordpressUsername: myadmin
+wordpressPassword: wppass1!
+mariadb:
+  auth:
+    rootPassword: mariarootpass

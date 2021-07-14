@@ -13,6 +13,7 @@ spec:
     - dns01:
         cloudDNS:
           project: proveofwork 
+          #hostedZoneName: 'sademo.de.'
           serviceAccountSecretRef:
             name: clouddns-dns01-solver-svc-acct
             key: key.json
